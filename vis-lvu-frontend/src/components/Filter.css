@@ -1,0 +1,14 @@
+.top-button{
+    width: 35px;
+    height: 30px;
+    margin-left: 4%;
+    font-size: 15px;
+    color: rgb(100, 96, 96);
+    text-decoration: underline solid 3px rgb(46, 46, 46);
+}
+
+.button-group{
+    margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

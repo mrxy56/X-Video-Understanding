@@ -1,0 +1,26 @@
+.video-detail{
+    height: 100%;
+}
+
+.detailvideoframe{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+.display-detail {
+    width: 100%;
+    padding-left: 5%;
+}
+
+.right-scroll{
+    max-height: 650px;
+    overflow: scroll;
+}
+
+.video-type{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: large;
+}

@@ -1,0 +1,14 @@
+.video-pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-item .page-link{
+    color:rgb(100, 96, 96);
+}

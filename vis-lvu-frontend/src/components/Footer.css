@@ -1,0 +1,12 @@
+.bordertop{
+    background-color: rgb(196, 193, 193);
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+

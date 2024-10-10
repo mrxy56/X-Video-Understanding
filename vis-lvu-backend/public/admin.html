@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-family: sans-serif;
+                  line-height: 1.5;
+                  min-height: 100vh;
+                  background: #f3f3f3;
+                  flex-direction: column;
+                  margin: 0;
+            }
+      
+            .main {
+                  background-color: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                  padding: 10px 20px;
+                  transition: transform 0.2s;
+                  width: 500px;
+                  text-align: center;
+            }
+      
+            h1 {
+                  color: rgb(100, 96, 96);
+            }
+      
+            label {
+                  display: block;
+                  width: 100%;
+                  margin-top: 10px;
+                  margin-bottom: 5px;
+                  text-align: left;
+                  color: #555;
+                  font-weight: bold;
+            }
+      
+      
+            input {
+                  display: block;
+                  width: 100%;
+                  margin-bottom: 15px;
+                  padding: 10px;
+                  box-sizing: border-box;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+            }
+      
+            button {
+                  padding: 15px;
+                  border-radius: 10px;
+                  margin-top: 15px;
+                  margin-bottom: 15px;
+                  border: none;
+                  color: white;
+                  cursor: pointer;
+                  background-color: rgb(100, 96, 96);
+                  width: 300px;
+                  font-size: 16px;
+            }
+          </style>
+    </head>
+<body>
+    <h1>Get all the videos:</h1>
+    <button class="btn1">Fetch the video list</button>
+    <h1>Add a video:</h1>
+    <div>
+        <input type="text" name="uid", value="" placeholder="Type the video id" />
+        <button class="btn2">Submit UID</button>
+    </div>
+    <script>
+        const featured_videos = [];
+        const btn1 = document.querySelector('.btn1');
+
+        const btn2 = document.querySelector('.btn2');
+        const uid = document.querySelector('input[name="uid"]');
+
+        /*btn3.addEventListener('click', () => {
+            fetch(`/videos/${myId.value}`).then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.length != 0){
+                    data.forEach(element => {
+                        console.log(element);
+                    });
+                }else{
+                    console.log('Not Found');
+                };
+            });
+        });*/
+
+        
+        btn1.addEventListener('click', ()=>{
+            fetch('/dbvideos');
+        });
+        
+        btn2.addEventListener('click', ()=>{
+            var featured_video_list = [];
+            featured_video_list = featured_videos.filter(featured_video => featured_video.uid == uid.value);
+            console.log(featured_video_list);
+            if(featured_video_list.length > 0){
+	            fetch('/dbvideos',{
+		            method: 'post',
+		            body: JSON.stringify(featured_video_list[0]),
+		            headers:{
+			            'Content-Type' : 'application/json'
+		            }
+	                }).then(res => res.json()).then((data) =>{
+		                console.log(data);
+	                })
+            }
+        });
+</script>
+</body>
+</html>

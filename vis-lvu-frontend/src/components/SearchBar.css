@@ -1,0 +1,28 @@
+.search{
+    height: 40px;
+    width: 95%;
+    margin-top: 10px;
+    z-index: 10;
+    position: relative;
+    border-radius: 5px;
+}
+
+.search input{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    border: transparent;
+    border: 1px solid rgb(196, 193, 193);
+}
+
+.search button{
+    width: 25px;
+    height: 20px;
+    border-radius: 10%;
+    position: absolute;
+    right: 2px;
+    top: 6px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    border: transparent;
+}
